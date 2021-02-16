@@ -13,6 +13,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import utils.Utils;
 
 import java.io.File;
@@ -33,9 +34,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BaseTest {
 	WebDriver driver;
-	public static ExtentTest test;
-	public static ExtentReports report;
-	static String timeStamp = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss").format(Calendar.getInstance().getTime());
+//	public static ExtentTest test;
+//	public static ExtentReports report;
+//	static String timeStamp = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss").format(Calendar.getInstance().getTime());
 	
 //	@BeforeTest
 //	public void startReport(){
@@ -80,7 +81,8 @@ public class BaseTest {
 //		driver = new ChromeDriver();
 //		driver.manage().window().maximize();
 //		driver.get(Utils.readProperty("url"));
-		System.setProperty("webdriver.chrome.driver", "C:\\automation\\drivers\\chromedriver.exe"); 
+//		System.setProperty("webdriver.chrome.driver", "C:\\automation\\drivers\\chromedriver.exe");
+		WebDriverManager.chromedriver().setup();
 		ChromeOptions cOptions = new ChromeOptions();
 		cOptions.addArguments("disable-infobars");
 		driver = new ChromeDriver(cOptions);
