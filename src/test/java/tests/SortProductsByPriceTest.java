@@ -4,6 +4,7 @@ import static org.testng.Assert.fail;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import io.qameta.allure.Description;
@@ -24,11 +25,11 @@ public class SortProductsByPriceTest extends BaseTest {
 //		test.log(LogStatus.PASS, "Login has been started");
 		ProductsPage pp = new ProductsPage(driver);
 		boolean actual = pp.isProductsPage();
-		//		Assert.assertTrue(actual);
-		if (!actual) {
+		Assert.assertTrue(actual);
+//		if (!actual) {
 //			test.log(LogStatus.FAIL,test.addScreenCapture(capture(driver))+ "Test Failed");
-			fail();
-		}
+//			fail();
+//		}
 //		test.log(LogStatus.PASS, test.addScreenCapture(capture(driver))+ "Login has been done successfully");
 
 	}
@@ -41,11 +42,11 @@ public class SortProductsByPriceTest extends BaseTest {
 		ProductsPage pp = new ProductsPage(driver);
 		int actual = pp.getNoOfProducts();
 		int expected = 6;
-		//		Assert.assertEquals(actual, expected);
-		if (actual != expected) {
+		Assert.assertEquals(actual, expected);
+//		if (actual != expected) {
 //			test.log(LogStatus.FAIL,test.addScreenCapture(capture(driver))+ "Test Failed. Actual was " + actual + " while expected was " + expected);
-			fail();
-		}
+//			fail();
+//		}
 //		else
 //			test.log(LogStatus.PASS, "Count TC has been done successfully");
 
@@ -60,14 +61,15 @@ public class SortProductsByPriceTest extends BaseTest {
 		
 		pp.sortProducts("Price (low to high)");
 		
-		if (pp.AreProductsSortedByPriceLowToHigh()) {
+		Assert.assertTrue(pp.AreProductsSortedByPriceLowToHigh());
+//		if (pp.AreProductsSortedByPriceLowToHigh()) {
 //			test.log(LogStatus.PASS, "All products are sorted from low to high");
-		}
-		else
-		{
+//		}
+//		else
+//		{
 //			test.log(LogStatus.FAIL,test.addScreenCapture(capture(driver))+ "Test Failed");
-			fail();
-		}
+//			fail();
+//		}
 //		int actual = pp.getNoOfProducts();
 //		int expected = 6;
 //		//		Assert.assertEquals(actual, expected);
@@ -90,13 +92,13 @@ public class SortProductsByPriceTest extends BaseTest {
 		fp.logout();
 		LoginPage lp = new LoginPage(driver);
 		boolean actual = lp.isItLoginPage();
-		if (actual) {
-//			test.log(LogStatus.PASS, "logout was done successfully");
-		}
-		else {
-//			test.log(LogStatus.FAIL,test.addScreenCapture(capture(driver))+ "TC has failed. Logout was failed");
-			fail();
-		}
-		//		Assert.assertTrue(actual);
+//		if (actual) {
+////			test.log(LogStatus.PASS, "logout was done successfully");
+//		}
+//		else {
+////			test.log(LogStatus.FAIL,test.addScreenCapture(capture(driver))+ "TC has failed. Logout was failed");
+//			fail();
+//		}
+		Assert.assertTrue(actual);
 	}
 }
