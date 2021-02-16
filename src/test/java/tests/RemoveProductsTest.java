@@ -20,7 +20,7 @@ import utils.Utils;
 public class RemoveProductsTest extends BaseTest {
 
 
-	@Test(description = "Login")
+	@Test(description = "tc01_Login")
 	@Description("Login with an existing user and password")
 	public void tc01_login() throws IOException
 	{
@@ -40,7 +40,7 @@ public class RemoveProductsTest extends BaseTest {
 	}
 
 
-	@Test(description = "Count Products")
+	@Test(description = "tc02_Count Products")
 	@Description("Count Products on the products pages")
 	public void tc02_countProducts() throws IOException
 	{
@@ -58,7 +58,7 @@ public class RemoveProductsTest extends BaseTest {
 
 	}
 
-	@Test(description = "Add Product")
+	@Test(description = "tc03_Add Product")
 	@Description("Add first product to cart")
 	public void tc03_addProduct1() throws IOException
 	{
@@ -85,7 +85,7 @@ public class RemoveProductsTest extends BaseTest {
 
 	}
 
-	@Test(description = "Add Product")
+	@Test(description = "tc04_Add Product")
 	@Description("Add second product to cart")
 	public void tc04_addProduct2() throws IOException
 	{
@@ -112,7 +112,7 @@ public class RemoveProductsTest extends BaseTest {
 
 	}
 
-	@Test(description = "Remove all products")
+	@Test(description = "tc05_Remove all products")
 	@Description("Remove all products from your cart page")
 	public void tc05_removeAllProduct() throws IOException
 	{
@@ -132,7 +132,7 @@ public class RemoveProductsTest extends BaseTest {
 	}
 
 
-	@Test(description = "Logout")
+	@Test(description = "tc06_Logout")
 	@Description("Logout from the application")
 	public void tc06_logout() throws IOException
 	{

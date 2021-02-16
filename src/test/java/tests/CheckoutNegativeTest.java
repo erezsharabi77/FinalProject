@@ -21,7 +21,7 @@ import utils.Utils;
 public class CheckoutNegativeTest extends BaseTest {
 
 
-	@Test(description = "Login")
+	@Test(description = "tc01_Login")
 	@Description("Login with existing user")
 	public void tc01_login() throws IOException
 	{
@@ -41,7 +41,7 @@ public class CheckoutNegativeTest extends BaseTest {
 	}
 
 
-	@Test(description = "Count Products")
+	@Test(description = "tc02_Count Products")
 	@Description("Count products from the Products page and verify it shows 6 products")
 	public void tc02_countProducts() throws IOException
 	{
@@ -59,7 +59,7 @@ public class CheckoutNegativeTest extends BaseTest {
 
 	}
 
-	@Test(description = "Add product to cart")
+	@Test(description = "tc03_Add product to cart")
 	@Description("Add first product to the cart")
 	public void tc03_addProduct1() throws IOException
 	{
@@ -86,7 +86,7 @@ public class CheckoutNegativeTest extends BaseTest {
 
 	}
 
-	@Test(description = "Add product to cart")
+	@Test(description = "tc04_Add product to cart")
 	@Description("Add second product to the cart")
 	public void tc04_addProduct2() throws IOException
 	{
@@ -113,7 +113,7 @@ public class CheckoutNegativeTest extends BaseTest {
 
 	}
 
-	@Test(description = "Checkout")
+	@Test(description = "tc05_Checkout")
 	@Description("Fill first name, last name, zip code and move to checkout")
 	public void tc05_checkout() throws IOException
 	{
@@ -152,7 +152,7 @@ public class CheckoutNegativeTest extends BaseTest {
 	}
 
 
-	@Test(description = "Logout")
+	@Test(description = "tc06_Logout")
 	@Description("Logout from the application")
 	public void tc06_logout() throws IOException
 	{

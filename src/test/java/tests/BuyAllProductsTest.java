@@ -20,7 +20,7 @@ import utils.Utils;
 public class BuyAllProductsTest extends BaseTest {
 
 
-	@Test(description = "Login")
+	@Test(description = "tc01_Login")
 	@Description("Login with existing user")
 	public void tc01_login() throws IOException
 	{
@@ -28,13 +28,13 @@ public class BuyAllProductsTest extends BaseTest {
 		lp.login(Utils.readProperty("user"), Utils.readProperty("password"));
 		ProductsPage pp = new ProductsPage(driver);
 		boolean actual = pp.isProductsPage();
-		actual=false;
+//		actual=false;
 		Assert.assertTrue(actual);
 
 	}
 
 
-	@Test(description = "Count Products")
+	@Test(description = "tc02_Count Products")
 	@Description("Count products from the Products page and verify it shows 6 products")
 	public void tc02_countProducts() throws IOException
 	{
@@ -52,7 +52,7 @@ public class BuyAllProductsTest extends BaseTest {
 
 	}
 
-	@Test(description = "Add all products")
+	@Test(description = "tc03_Add all products")
 	@Description("Add all products to cart")
 	public void tc03_addAllProduct() throws IOException
 	{
@@ -73,7 +73,7 @@ public class BuyAllProductsTest extends BaseTest {
 //		}
 	}
 
-	@Test(description = "Checkout")
+	@Test(description = "tc04_Checkout")
 	@Description("Fill first name, last name, zip code and move to checkout")
 	public void tc04_checkout() throws IOException
 	{
@@ -110,7 +110,7 @@ public class BuyAllProductsTest extends BaseTest {
 //		}
 	}
 
-	@Test(description = "Finish Order")
+	@Test(description = "tc05_Finish Order")
 	@Description("Click on finish order to get to the thank you page")
 	public void tc05_finishOrder() throws IOException
 	{
@@ -132,7 +132,7 @@ public class BuyAllProductsTest extends BaseTest {
 		//		Assert.assertEquals(actual, expected);
 	}
 
-	@Test(description = "Logout")
+	@Test(description = "tc06_Logout")
 	@Description("Logout from the application")
 	public void tc06_logout() throws IOException
 	{

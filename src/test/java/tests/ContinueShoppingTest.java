@@ -22,7 +22,7 @@ import utils.Utils;
 public class ContinueShoppingTest extends BaseTest {
 
 
-	@Test(description = "Login")
+	@Test(description = "tc01_Login")
 	@Description("Login with existing user")
 	public void tc01_login() throws IOException
 	{
@@ -42,7 +42,7 @@ public class ContinueShoppingTest extends BaseTest {
 	}
 
 
-	@Test(description = "Count Products")
+	@Test(description = "tc02_Count Products")
 	@Description("Count products from the Products page and verify it shows 6 products")
 	public void tc02_countProducts() throws IOException
 	{
@@ -60,7 +60,7 @@ public class ContinueShoppingTest extends BaseTest {
 
 	}
 
-	@Test(description = "Add product to cart")
+	@Test(description = "tc03_Add product to cart")
 	@Description("Add first product to the cart")
 	public void tc03_addProduct1() throws IOException
 	{
@@ -87,7 +87,7 @@ public class ContinueShoppingTest extends BaseTest {
 
 	}
 
-	@Test(description = "Add product to cart")
+	@Test(description = "tc04_Add product to cart")
 	@Description("Add second product to the cart")
 	public void tc04_addProduct2() throws IOException
 	{
@@ -114,7 +114,7 @@ public class ContinueShoppingTest extends BaseTest {
 
 	}
 
-	@Test(description = "Continue Shopping")
+	@Test(description = "tc05_Continue Shopping")
 	@Description("Choose to continue shooping instead of moving to checkout")
 	public void tc05_continueShopping() throws IOException
 	{
@@ -134,7 +134,7 @@ public class ContinueShoppingTest extends BaseTest {
 //		}
 	}
 
-	@Test(description = "Add product to cart")
+	@Test(description = "tc06_Add product to cart")
 	@Description("Add third product to the cart")
 	public void tc06_addProduct3() throws IOException
 	{
@@ -161,7 +161,7 @@ public class ContinueShoppingTest extends BaseTest {
 
 	}
 
-	@Test(description = "Checkout")
+	@Test(description = "tc07_Checkout")
 	@Description("Fill first name, last name, zip code and move to checkout")
 	public void tc07_checkout() throws IOException
 	{
@@ -197,7 +197,7 @@ public class ContinueShoppingTest extends BaseTest {
 //		}
 	}
 
-	@Test(description = "Finish Order")
+	@Test(description = "tc08_Finish Order")
 	@Description("Click on finish order to get to the thank you page")
 	public void tc08_finishOrder() throws IOException
 	{
@@ -217,7 +217,7 @@ public class ContinueShoppingTest extends BaseTest {
 		Assert.assertEquals(actual, expected);
 	}
 
-	@Test(description = "Logout")
+	@Test(description = "tc09_Logout")
 	@Description("Logout from the application")
 	public void tc09_logout() throws IOException
 	{

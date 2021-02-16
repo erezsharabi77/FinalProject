@@ -14,7 +14,7 @@ import utils.Utils;
 
 public class SortProductsByPriceTest extends BaseTest {
 
-	@Test(description = "Login")
+	@Test(priority= 0, description = "tc01_Login")
 	@Description("Login with existing user")
 	public void tc01_login() throws IOException
 	{
@@ -33,7 +33,7 @@ public class SortProductsByPriceTest extends BaseTest {
 
 	}
 
-	@Test(description = "Count Products")
+	@Test(priority= 1,description = "tc02_Count Products")
 	@Description("Count products from the Products page and verify it shows 6 products")
 	public void tc02_countProducts() throws IOException
 	{
@@ -51,7 +51,7 @@ public class SortProductsByPriceTest extends BaseTest {
 
 	}
 	
-	@Test(description = "Sort Products By Price")
+	@Test(priority= 2,description = "tc03_Sort Products By Price")
 	@Description("Sort products in Products Page by price from low to high")
 	public void tc03_sortProductsByPriceLowToHigh() throws IOException
 	{
@@ -80,7 +80,7 @@ public class SortProductsByPriceTest extends BaseTest {
 
 	}
 
-	@Test(description = "Logout")
+	@Test(priority= 3,description = "tc04_Logout")
 	@Description("Logout from the application")
 	public void tc04_logout() throws IOException
 	{
