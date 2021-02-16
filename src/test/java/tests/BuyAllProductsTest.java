@@ -52,7 +52,8 @@ public class BuyAllProductsTest extends BaseTest {
 
 	}
 
-	@Test
+	@Test(description = "Add all products")
+	@Description("Add all products to cart")
 	public void tc03_addAllProduct() throws IOException
 	{
 //		test = report.startTest("Add all Products","Add all products to the cart");
@@ -72,7 +73,8 @@ public class BuyAllProductsTest extends BaseTest {
 //		}
 	}
 
-	@Test
+	@Test(description = "Checkout")
+	@Description("Fill first name, last name, zip code and move to checkout")
 	public void tc04_checkout() throws IOException
 	{
 //		test = report.startTest("Checkout","The purpose of this TC is to fill personal details and move to checkout overview");
@@ -108,7 +110,8 @@ public class BuyAllProductsTest extends BaseTest {
 //		}
 	}
 
-	@Test
+	@Test(description = "Finish Order")
+	@Description("Click on finish order to get to the thank you page")
 	public void tc05_finishOrder() throws IOException
 	{
 //		test = report.startTest("Finish Order","The purpose of this TC is to complete an order");
@@ -129,7 +132,8 @@ public class BuyAllProductsTest extends BaseTest {
 		//		Assert.assertEquals(actual, expected);
 	}
 
-	@Test
+	@Test(description = "Logout")
+	@Description("Logout from the application")
 	public void tc06_logout() throws IOException
 	{
 //		test = report.startTest("Logout","The purpose of this TC is to logout");
