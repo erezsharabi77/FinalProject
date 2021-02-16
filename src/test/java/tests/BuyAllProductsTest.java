@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import io.qameta.allure.Description;
 import pageobjects.CheckoutPage;
 import pageobjects.FinishPage;
 import pageobjects.LoginPage;
@@ -19,7 +20,8 @@ import utils.Utils;
 public class BuyAllProductsTest extends BaseTest {
 
 
-	@Test
+	@Test(description = "Login")
+	@Description("Login with existing user")
 	public void tc01_login() throws IOException
 	{
 		LoginPage lp = new LoginPage(driver);
@@ -32,7 +34,8 @@ public class BuyAllProductsTest extends BaseTest {
 	}
 
 
-	@Test
+	@Test(description = "Count Products")
+	@Description("Count products from the Products page and verify it shows 6 products")
 	public void tc02_countProducts() throws IOException
 	{
 //		test = report.startTest("Count Products","Count Products in products page");
