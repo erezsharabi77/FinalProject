@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 import com.relevantcodes.extentreports.LogStatus;
 
+import io.qameta.allure.Description;
 import pageobjects.CheckoutPage;
 import pageobjects.FinishPage;
 import pageobjects.LoginPage;
@@ -20,7 +21,8 @@ import utils.Utils;
 public class CheckoutNegativeTest extends BaseTest {
 
 
-	@Test
+	@Test(description = "Login")
+	@Description("Login with existing user")
 	public void tc01_login() throws IOException
 	{
 //		test = report.startTest("Login","Simple Login");
@@ -39,7 +41,8 @@ public class CheckoutNegativeTest extends BaseTest {
 	}
 
 
-	@Test
+	@Test(description = "Count Products")
+	@Description("Count products from the Products page and verify it shows 6 products")
 	public void tc02_countProducts() throws IOException
 	{
 //		test = report.startTest("Count Products","Count Products in products page");
@@ -56,7 +59,8 @@ public class CheckoutNegativeTest extends BaseTest {
 
 	}
 
-	@Test
+	@Test(description = "Add product to cart")
+	@Description("Add first product to the cart")
 	public void tc03_addProduct1() throws IOException
 	{
 		String productName = Utils.readProperty("product1");
@@ -82,7 +86,8 @@ public class CheckoutNegativeTest extends BaseTest {
 
 	}
 
-	@Test
+	@Test(description = "Add product to cart")
+	@Description("Add second product to the cart")
 	public void tc04_addProduct2() throws IOException
 	{
 		String productName = Utils.readProperty("product2");
@@ -108,7 +113,8 @@ public class CheckoutNegativeTest extends BaseTest {
 
 	}
 
-	@Test
+	@Test(description = "Checkout")
+	@Description("Fill first name, last name, zip code and move to checkout")
 	public void tc05_checkout() throws IOException
 	{
 //		test = report.startTest("Checkout Negative","The purpose of this Negative TC is to keep the personal fields empty and try to move to checkout overview");
@@ -146,7 +152,8 @@ public class CheckoutNegativeTest extends BaseTest {
 	}
 
 
-	@Test
+	@Test(description = "Logout")
+	@Description("Logout from the application")
 	public void tc06_logout() throws IOException
 	{
 //		test = report.startTest("Logout","The purpose of this TC is to logout");

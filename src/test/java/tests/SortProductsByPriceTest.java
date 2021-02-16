@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
+import io.qameta.allure.Description;
 import pageobjects.FinishPage;
 import pageobjects.LoginPage;
 import pageobjects.ProductsPage;
@@ -13,7 +14,8 @@ import utils.Utils;
 
 public class SortProductsByPriceTest extends BaseTest {
 
-	@Test
+	@Test(description = "Login")
+	@Description("Login with existing user")
 	public void tc01_login() throws IOException
 	{
 //		test = report.startTest("Login","Simple Login");
@@ -31,7 +33,8 @@ public class SortProductsByPriceTest extends BaseTest {
 
 	}
 
-	@Test
+	@Test(description = "Count Products")
+	@Description("Count products from the Products page and verify it shows 6 products")
 	public void tc02_countProducts() throws IOException
 	{
 //		test = report.startTest("Count Products","Count Products in products page");
@@ -48,7 +51,8 @@ public class SortProductsByPriceTest extends BaseTest {
 
 	}
 	
-	@Test
+	@Test(description = "Sort Products By Price")
+	@Description("Sort products in Products Page by price from low to high")
 	public void tc03_sortProductsByPriceLowToHigh() throws IOException
 	{
 //		test = report.startTest("Sort Products Price","The purpose of this TC is to sort all products by their price from low to high");
@@ -76,7 +80,8 @@ public class SortProductsByPriceTest extends BaseTest {
 
 	}
 
-	@Test
+	@Test(description = "Logout")
+	@Description("Logout from the application")
 	public void tc04_logout() throws IOException
 	{
 //		test = report.startTest("Logout","The purpose of this TC is to logout");

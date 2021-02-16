@@ -20,7 +20,7 @@ import utils.Excel;
 public class LoginFailedTest extends BaseTest {
 	
 	
-	@Test(dataProvider="getDataFromExcel", description="use incorect login information")
+	@Test(dataProvider="getDataFromExcel", description="Use incorect login information")
 	public void tc01_loginFailed(String user,String password) throws IOException
 	{
 //		test = report.startTest("Login Negative Test","The purpose of this TC is to use incorect login information");		

@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 import com.relevantcodes.extentreports.LogStatus;
 
+import io.qameta.allure.Description;
 import pageobjects.CheckoutPage;
 import pageobjects.FinishPage;
 import pageobjects.LoginPage;
@@ -21,7 +22,8 @@ import utils.Utils;
 public class ContinueShoppingTest extends BaseTest {
 
 
-	@Test
+	@Test(description = "Login")
+	@Description("Login with existing user")
 	public void tc01_login() throws IOException
 	{
 //		test = report.startTest("Login","Simple Login");
@@ -40,7 +42,8 @@ public class ContinueShoppingTest extends BaseTest {
 	}
 
 
-	@Test
+	@Test(description = "Count Products")
+	@Description("Count products from the Products page and verify it shows 6 products")
 	public void tc02_countProducts() throws IOException
 	{
 //		test = report.startTest("Count Products","Count Products in products page");
@@ -57,7 +60,8 @@ public class ContinueShoppingTest extends BaseTest {
 
 	}
 
-	@Test
+	@Test(description = "Add product to cart")
+	@Description("Add first product to the cart")
 	public void tc03_addProduct1() throws IOException
 	{
 		String productName = Utils.readProperty("product1");
@@ -83,7 +87,8 @@ public class ContinueShoppingTest extends BaseTest {
 
 	}
 
-	@Test
+	@Test(description = "Add product to cart")
+	@Description("Add second product to the cart")
 	public void tc04_addProduct2() throws IOException
 	{
 		String productName = Utils.readProperty("product2");
@@ -109,7 +114,8 @@ public class ContinueShoppingTest extends BaseTest {
 
 	}
 
-	@Test
+	@Test(description = "Continue Shopping")
+	@Description("Choose to continue shooping instead of moving to checkout")
 	public void tc05_continueShopping() throws IOException
 	{
 //		test = report.startTest("Continue Shopping","Continue shopping TC will move the user back to the products page");
@@ -128,7 +134,8 @@ public class ContinueShoppingTest extends BaseTest {
 //		}
 	}
 
-	@Test
+	@Test(description = "Add product to cart")
+	@Description("Add third product to the cart")
 	public void tc06_addProduct3() throws IOException
 	{
 		String productName = Utils.readProperty("product3");
@@ -154,7 +161,8 @@ public class ContinueShoppingTest extends BaseTest {
 
 	}
 
-	@Test
+	@Test(description = "Checkout")
+	@Description("Fill first name, last name, zip code and move to checkout")
 	public void tc07_checkout() throws IOException
 	{
 //		test = report.startTest("Checkout","The purpose of this TC is to fill personal details and move to checkout overview");
@@ -189,7 +197,8 @@ public class ContinueShoppingTest extends BaseTest {
 //		}
 	}
 
-	@Test
+	@Test(description = "Finish Order")
+	@Description("Click on finish order to get to the thank you page")
 	public void tc08_finishOrder() throws IOException
 	{
 //		test = report.startTest("Finish Order","The purpose of this TC is to complete an order");
@@ -208,7 +217,8 @@ public class ContinueShoppingTest extends BaseTest {
 		Assert.assertEquals(actual, expected);
 	}
 
-	@Test
+	@Test(description = "Logout")
+	@Description("Logout from the application")
 	public void tc09_logout() throws IOException
 	{
 //		test = report.startTest("Logout","The purpose of this TC is to logout");
