@@ -23,21 +23,11 @@ public class LoginFailedTest extends BaseTest {
 	@Test(dataProvider="getDataFromExcel", description="Use incorect login information")
 	public void tc01_loginFailed(String user,String password) throws IOException
 	{
-//		test = report.startTest("Login Negative Test","The purpose of this TC is to use incorect login information");		
 		LoginPage lp = new LoginPage(driver);
-//		lp.login("standard_user", "secret_sauce");
 		lp.login(user, password);
 		
 		String expected = "Epic sadface: Username and password do not match any user in this service";
 		String actual = lp.getLoginErrMsg();
-//		if (actual.equalsIgnoreCase(expected)) {
-//			test.log(LogStatus.PASS, "login Negative test was passed successfully");
-//		}
-//		else {
-//			test.log(LogStatus.FAIL,test.addScreenCapture(capture(driver))+ "TC has failed. login Negative test was failed");
-//			fail();
-//		}
-		
 		Assert.assertEquals(actual, expected);
 		
 	}
