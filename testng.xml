@@ -4,16 +4,9 @@
 	<listeners>
 		<listener class-name="utilities.ListenerClass"></listener>
 	</listeners>
-	<test thread-count="5" name="Test">
-		<classes>
-			  <class name="tests.SortProductsByPriceTest"/>
-		      <class name="tests.ContinueShoppingTest"/>
-		      <class name="tests.CheckoutNegativeTest"/>
-		      <class name="tests.BuyAllProductsTest"/>
-		      <class name="tests.LoginFailedTest"/>
-		      <class name="tests.RemoveProductsTest"/>
-		      <class name="tests.LoginTest"/>
-		      <class name="tests.BuyProductsTest"/>
-		</classes>
+	<test thread-count="5" name="Test">		
+		<packages>
+            <package name="tests"/>
+        </packages>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

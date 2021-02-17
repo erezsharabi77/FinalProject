@@ -91,6 +91,7 @@ public class MenuPage extends BasePage{
 	@Step("Get the number of items as appear on the cart icon")
 	public String getcartBadgeNumber()
 	{
+		sleep(400);
 		return getText(cartBadge);
 	}
 }

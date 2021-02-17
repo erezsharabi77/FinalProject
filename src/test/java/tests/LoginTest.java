@@ -12,6 +12,7 @@ public class LoginTest extends BaseTest1 {
 	@Severity(SeverityLevel.BLOCKER)
 	@Test
 	public void lg1_loginFailed() throws InterruptedException {
+		System.out.println("Another Login Negative Test begins");
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.login("standard_user", "111");
 	}

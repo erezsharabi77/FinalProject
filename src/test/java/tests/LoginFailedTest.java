@@ -23,6 +23,7 @@ public class LoginFailedTest extends BaseTest {
 	@Test(dataProvider="getDataFromExcel", description="Use incorect login information")
 	public void tc01_loginFailed(String user,String password) throws IOException
 	{
+		System.out.println("Login Negative Test begins");
 		LoginPage lp = new LoginPage(driver);
 		lp.login(user, password);
 		

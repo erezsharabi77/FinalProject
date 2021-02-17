@@ -26,6 +26,7 @@ public class ContinueShoppingTest extends BaseTest {
 	@Description("Login with existing user")
 	public void tc01_login() throws IOException
 	{
+		System.out.println("Continue shopping Test begins");
 		LoginPage lp = new LoginPage(driver);
 		lp.login(Utils.readProperty("user"), Utils.readProperty("password"));
 		ProductsPage pp = new ProductsPage(driver);
