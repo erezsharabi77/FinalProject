@@ -13,7 +13,8 @@ public class ProductPage extends MenuPage {
 	@FindBy(css = ".btn_primary.btn_inventory")
 	WebElement addToCartBtn;
 	
-	@FindBy(css = ".inventory_details > button")//.inventory_details_back_button")
+//	@FindBy(css = ".inventory_details > button")//.inventory_details_back_button")
+	@FindBy(xpath = "//*[@id='inventory_item_container']/div/button")
 	WebElement backBtn;
 	
 	public ProductPage(WebDriver driver) {
