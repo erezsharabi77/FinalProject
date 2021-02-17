@@ -25,6 +25,7 @@ public class BuyAllProductsTest extends BaseTest {
 	public void tc01_login() throws IOException
 	{
 		System.out.println("Buy All products Test begins");
+		System.out.println("*******LOGIN****************");
 		LoginPage lp = new LoginPage(driver);
 		lp.login(Utils.readProperty("user"), Utils.readProperty("password"));
 		ProductsPage pp = new ProductsPage(driver);
