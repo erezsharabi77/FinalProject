@@ -25,14 +25,14 @@ public class BuyAllProductsTest extends BaseTest {
 	public void tc01_login() throws IOException
 	{
 		System.out.println("Buy All products Test begins");
-		System.out.println("*******LOGIN****************");
+		System.out.println("*******START LOGIN****************");
 		LoginPage lp = new LoginPage(driver);
 		lp.login(Utils.readProperty("user"), Utils.readProperty("password"));
 		ProductsPage pp = new ProductsPage(driver);
 		boolean actual = pp.isProductsPage();
 //		actual=false;
 		Assert.assertTrue(actual);
-
+		System.out.println("*******END LOGIN****************");
 	}
 
 
@@ -40,16 +40,19 @@ public class BuyAllProductsTest extends BaseTest {
 	@Description("Count products from the Products page and verify it shows 6 products")
 	public void tc02_countProducts() throws IOException
 	{
+		System.out.println("*******START COUNT PRODUCTS****************");
 		ProductsPage pp = new ProductsPage(driver);
 		int actual = pp.getNoOfProducts();
 		int expected = 6;
 		Assert.assertEquals(actual, expected);
+		System.out.println("*******END COUNT PRODUCTS****************");
 	}
 
 	@Test(description = "tc03_Add all products")
 	@Description("Add all products to cart")
 	public void tc03_addAllProduct() throws IOException
 	{
+		System.out.println("*******START ADD ALL PRODUCTS****************");
 //		test = report.startTest("Add all Products","Add all products to the cart");
 		ProductsPage psp = new ProductsPage(driver);
 		psp.addAllProducts();
@@ -57,12 +60,14 @@ public class BuyAllProductsTest extends BaseTest {
 		String i = psp.getcartBadgeNumber();
 		int cartCount=Integer.parseInt(i);
 		Assert.assertEquals(cartCount, 6);
+		System.out.println("*******END ADD ALL PRODUCTS****************");
 	}
 
 	@Test(description = "tc04_Checkout")
 	@Description("Fill first name, last name, zip code and move to checkout")
 	public void tc04_checkout() throws IOException
 	{
+		System.out.println("*******START CHECKOUT****************");
 //		test = report.startTest("Checkout","The purpose of this TC is to fill personal details and move to checkout overview");
 		ProductsPage psp = new ProductsPage(driver);
 		psp.openCart();
@@ -80,25 +85,29 @@ public class BuyAllProductsTest extends BaseTest {
 		OverviewPage ov = new OverviewPage(driver);
 		header = ov.getOverviewPageHeader();
 		Assert.assertEquals(header, "Checkout: Overview");
-
+		System.out.println("*******END CHECKOUT****************");
 	}
 
 	@Test(description = "tc05_Finish Order")
 	@Description("Click on finish order to get to the thank you page")
 	public void tc05_finishOrder() throws IOException
 	{
+		System.out.println("*******START FINISH ORDER****************");
 		OverviewPage ovp = new OverviewPage(driver);
 		ovp.clickFinishBtn();
 		FinishPage fp = new FinishPage(driver);
 		String actual = fp.getThankYouMsg();
 		String expected = "THANK YOU FOR YOUR ORDER";
 		Assert.assertEquals(actual,expected);
+		System.out.println("*******END FINISH ORDER****************");
+
 	}
 
 	@Test(description = "tc06_Logout")
 	@Description("Logout from the application")
 	public void tc06_logout() throws IOException
 	{
+		System.out.println("*******START LOGOUT****************");
 		FinishPage fp = new FinishPage(driver);
 		fp.clickMenu();
 		fp.logout();
@@ -106,5 +115,6 @@ public class BuyAllProductsTest extends BaseTest {
 		boolean actual = lp.isItLoginPage();
 
 		Assert.assertTrue(actual);
+		System.out.println("*******FINISH LOGOUT****************");
 	}
 }

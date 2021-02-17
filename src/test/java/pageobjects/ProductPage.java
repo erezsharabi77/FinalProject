@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import io.qameta.allure.Step;
 
@@ -28,7 +29,7 @@ public class ProductPage extends MenuPage {
 	@Step("Click back from the Product page")
 	public void back()
 	{
-		sleep(300);
+		wait.until(ExpectedConditions.elementToBeClickable(backBtn));
 		click(backBtn);
 	}
 }

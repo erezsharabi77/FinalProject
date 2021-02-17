@@ -25,12 +25,14 @@ public class CheckoutNegativeTest extends BaseTest {
 	@Description("Login with existing user")
 	public void tc01_login() throws IOException
 	{
+		System.out.println("*******START LOGIN****************");
 		System.out.println("Checkout negative test begins");
 		LoginPage lp = new LoginPage(driver);
 		lp.login(Utils.readProperty("user"), Utils.readProperty("password"));
 		ProductsPage pp = new ProductsPage(driver);
 		boolean actual = pp.isProductsPage();
 		Assert.assertTrue(actual);
+		System.out.println("*******END LOGIN****************");
 	}
 
 
@@ -38,16 +40,19 @@ public class CheckoutNegativeTest extends BaseTest {
 	@Description("Count products from the Products page and verify it shows 6 products")
 	public void tc02_countProducts() throws IOException
 	{
+		System.out.println("*******START COUNT PRODUCTS****************");
 		ProductsPage pp = new ProductsPage(driver);
 		int actual = pp.getNoOfProducts();
 		int expected = 6;
 		Assert.assertEquals(actual, expected);
+		System.out.println("*******END COUNT PRODUCTS****************");
 	}
 
 	@Test(description = "tc03_Add product to cart")
 	@Description("Add first product to the cart")
 	public void tc03_addProduct1() throws IOException
 	{
+		System.out.println("*******START ADD FIRST PRODUCT****************");
 		String productName = Utils.readProperty("product1");
 		ProductsPage psp = new ProductsPage(driver);
 		psp.chooseProduct(productName);
@@ -59,6 +64,7 @@ public class CheckoutNegativeTest extends BaseTest {
 		int cartCount=Integer.parseInt(i);
 		Assert.assertEquals(cartCount, 1);
 		pp.back();
+		System.out.println("*******END ADD FIRST PRODUCT****************");
 
 	}
 
@@ -66,6 +72,7 @@ public class CheckoutNegativeTest extends BaseTest {
 	@Description("Add second product to the cart")
 	public void tc04_addProduct2() throws IOException
 	{
+		System.out.println("*******START ADD SECOND PRODUCT****************");
 		String productName = Utils.readProperty("product2");
 		ProductsPage psp = new ProductsPage(driver);
 		psp.chooseProduct(productName);
@@ -77,6 +84,7 @@ public class CheckoutNegativeTest extends BaseTest {
 		int cartCount=Integer.parseInt(i);
 		Assert.assertEquals(cartCount, 2);
 		pp.back();
+		System.out.println("*******END ADD SECOND PRODUCT****************");
 
 	}
 
@@ -84,6 +92,7 @@ public class CheckoutNegativeTest extends BaseTest {
 	@Description("Fill first name, last name, zip code and move to checkout")
 	public void tc05_checkout() throws IOException
 	{
+		System.out.println("*******START CHECKOUT****************");
 		ProductsPage psp = new ProductsPage(driver);
 		psp.openCart();
 
@@ -100,7 +109,7 @@ public class CheckoutNegativeTest extends BaseTest {
 		//Get error message presented on the page
 		String errMsg = cp.getErrMsg();
 		Assert.assertEquals(errMsg, "Error: First Name is required");
-
+		System.out.println("*******END CHECKOUT****************");
 	}
 
 
@@ -108,6 +117,7 @@ public class CheckoutNegativeTest extends BaseTest {
 	@Description("Logout from the application")
 	public void tc06_logout() throws IOException
 	{
+		System.out.println("*******START LOGOUT****************");
 		FinishPage fp = new FinishPage(driver);
 		fp.clickMenu();
 		fp.logout();
@@ -115,5 +125,6 @@ public class CheckoutNegativeTest extends BaseTest {
 		boolean actual = lp.isItLoginPage();
 
 		Assert.assertTrue(actual);
+		System.out.println("*******END LOGOUT****************");
 	}
 }
