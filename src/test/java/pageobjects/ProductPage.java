@@ -28,7 +28,7 @@ public class ProductPage extends MenuPage {
 	@Step("Click back from the Product page")
 	public void back()
 	{
-		sleep(400);
+		sleep(300);
 		click(backBtn);
 	}
 }
