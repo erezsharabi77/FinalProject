@@ -41,6 +41,8 @@ public class ProductPage extends MenuPage {
 	@Step("Get product name")
 	public String getProductName()
 	{
+//		wait.until(ExpectedConditions.invisibilityOf(productName));
+		sleep(300);
 		return getText(productName);
 	}
 }
