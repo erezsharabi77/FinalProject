@@ -18,6 +18,9 @@ public class ProductPage extends MenuPage {
 //	@FindBy(xpath = "//*[@id='inventory_item_container']/div/button")
 	WebElement backBtn;
 	
+	@FindBy(css = ".inventory_details_name")
+	WebElement productName;
+	
 	public ProductPage(WebDriver driver) {
 		super(driver);
 	}
@@ -33,5 +36,11 @@ public class ProductPage extends MenuPage {
 	{
 		wait.until(ExpectedConditions.elementToBeClickable(backBtn));
 		click(backBtn);
+	}
+	
+	@Step("Get product name")
+	public String getProductName()
+	{
+		return getText(productName);
 	}
 }

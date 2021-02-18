@@ -59,6 +59,8 @@ public class CheckoutNegativeTest extends BaseTest {
 
 		ProductPage pp = new ProductPage(driver);
 
+		String prdName = pp.getProductName();
+		Assert.assertEquals(prdName, productName);
 		pp.addToCart();
 		String i = pp.getcartBadgeNumber();
 		int cartCount=Integer.parseInt(i);
@@ -79,6 +81,8 @@ public class CheckoutNegativeTest extends BaseTest {
 
 		ProductPage pp = new ProductPage(driver);
 
+		String prdName = pp.getProductName();
+		Assert.assertEquals(prdName, productName);
 		pp.addToCart();
 		String i = pp.getcartBadgeNumber();
 		int cartCount=Integer.parseInt(i);
