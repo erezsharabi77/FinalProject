@@ -57,7 +57,7 @@ public class BaseTest {
         testContext.setAttribute("WebDriver", this.driver);
 		driver.manage().window().maximize();
 		driver.get(Utils.readProperty("url"));
-		System.out.println("1");
+		System.out.println("BEGIN TEST SET");
 //		driver.get("https://www.saucedemo.com/index.html");
 
 		//		TasksPage tp = new TasksPage(driver);

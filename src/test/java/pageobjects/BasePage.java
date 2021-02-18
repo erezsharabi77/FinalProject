@@ -20,7 +20,8 @@ public class BasePage {
 		js=(JavascriptExecutor)driver;
 		wait = new WebDriverWait(driver, 15);
 	}
-
+	
+	//Fill a given text to a given element
 	public void fillText(WebElement el, String text)
 	{
 		highlightElement(el, "green");
@@ -28,20 +29,22 @@ public class BasePage {
 		el.clear();
 		el.sendKeys(text);
 	}
-
+	//Click on a given element
 	public void click(WebElement el)
 	{
 		highlightElement(el, "green");
 		sleep(300);
 		el.click();
 	}
-
+	
+	//Get Text from a given element
 	public String getText(WebElement el) {
 		highlightElement(el, "green");
 		sleep(300);
 		return el.getText();
 	}
 
+	//Wait for a given milliseconds
 	public void sleep(long mills) {
 		try {
 			Thread.sleep(mills);
@@ -51,11 +54,13 @@ public class BasePage {
 		}
 	}
 	
+	//Check if element exist
 	public boolean isExist(WebElement el)
 	{
 		return el.isDisplayed();
 	}
 	
+	//Check if a given list exists
 	public boolean isListExist(List<WebElement> list)
 	{
 		if (list.size() != 0) {
@@ -67,6 +72,7 @@ public class BasePage {
 	}
 	/*
 	 * Call this method with your element and a color like (red,green,orange etc...)
+	 * Use this method to highlight elements on the screen
 	 */
 	private void highlightElement(WebElement element, String color) {
 		//keep the old style to change it back

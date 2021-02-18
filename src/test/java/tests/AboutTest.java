@@ -2,19 +2,15 @@ package tests;
 
 import java.io.IOException;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import io.qameta.allure.Description;
 import pageobjects.AboutPage;
-import pageobjects.CheckoutPage;
 import pageobjects.FinishPage;
 import pageobjects.LoginPage;
-import pageobjects.OverviewPage;
 import pageobjects.ProductsPage;
-import pageobjects.YourCartPage;
 import utilities.ListenerClass;
 import utils.Utils;
 
@@ -29,8 +25,10 @@ public class AboutTest extends BaseTest {
 		System.out.println("About Test begins");
 		System.out.println("*******START LOGIN****************");
 		LoginPage lp = new LoginPage(driver);
+		//Login with user=standard_user and password=secret_sauce
 		lp.login(Utils.readProperty("user"), Utils.readProperty("password"));
 		ProductsPage pp = new ProductsPage(driver);
+		//Check if the user is in Products page
 		boolean actual = pp.isProductsPage();
 //		actual=false;
 		Assert.assertTrue(actual);
@@ -44,10 +42,14 @@ public class AboutTest extends BaseTest {
 	{
 		System.out.println("*******START ABOUT****************");
 		ProductsPage pp = new ProductsPage(driver);
+		//Click on the 3 small lines of menu (left top hand side of the page)
 		pp.clickMenu();
+		//Click on "About"
 		pp.about();
 		AboutPage ap = new AboutPage(driver);
+		//Get header of the page to make sure the user is in About page
 		String actual = ap.getHeader();
+		//Go back from About page to the https://www.saucedemo.com web site
 		driver.navigate().back();
 		Assert.assertEquals(actual, "For the best customer experience, just add Sauce");
 		System.out.println("*******END ABOUT****************");
@@ -61,9 +63,12 @@ public class AboutTest extends BaseTest {
 	{
 		System.out.println("*******START LOGOUT****************");
 		FinishPage fp = new FinishPage(driver);
+		//Click on the 3 small lines of menu (left top hand side of the page)
 		fp.clickMenu();
+		//Click on Logout
 		fp.logout();
 		LoginPage lp = new LoginPage(driver);
+		//Make sure the logout has been done successfully by verifying that the user is in Login page
 		boolean actual = lp.isItLoginPage();
 
 		Assert.assertTrue(actual);

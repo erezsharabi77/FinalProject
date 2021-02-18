@@ -27,10 +27,11 @@ public class ProblemUserBuyAllProductsTest extends BaseTest {
 		System.out.println("Problem User - Buy All products Test begins");
 		System.out.println("*******START LOGIN****************");
 		LoginPage lp = new LoginPage(driver);
+		//Login with user=standard_user and password=secret_sauce
 		lp.login(Utils.readProperty("problemuser"), Utils.readProperty("password"));
 		ProductsPage pp = new ProductsPage(driver);
+		//Check if the user is in Products page
 		boolean actual = pp.isProductsPage();
-//		actual=false;
 		Assert.assertTrue(actual);
 		System.out.println("*******END LOGIN****************");
 	}
@@ -42,8 +43,10 @@ public class ProblemUserBuyAllProductsTest extends BaseTest {
 	{
 		System.out.println("*******START COUNT PRODUCTS****************");
 		ProductsPage pp = new ProductsPage(driver);
+		//Get number of products appear in Products page
 		int actual = pp.getNoOfProducts();
 		int expected = 6;
+		//Make sure there are 6 actual products in Products page
 		Assert.assertEquals(actual, expected);
 		System.out.println("*******END COUNT PRODUCTS****************");
 	}
@@ -53,12 +56,13 @@ public class ProblemUserBuyAllProductsTest extends BaseTest {
 	public void tc03_addAllProduct() throws IOException
 	{
 		System.out.println("*******START ADD ALL PRODUCTS****************");
-//		test = report.startTest("Add all Products","Add all products to the cart");
 		ProductsPage psp = new ProductsPage(driver);
+		//Add all products from Products page to cart
 		psp.addAllProducts();
-
+		//Get the number from the cart icon (right top side of the page)
 		String i = psp.getcartBadgeNumber();
 		int cartCount=Integer.parseInt(i);
+		//Make sure the cart icon shows 6
 		Assert.assertEquals(cartCount, 6);
 		System.out.println("*******END ADD ALL PRODUCTS****************");
 	}
@@ -70,10 +74,13 @@ public class ProblemUserBuyAllProductsTest extends BaseTest {
 		System.out.println("*******START CHECKOUT****************");
 //		test = report.startTest("Checkout","The purpose of this TC is to fill personal details and move to checkout overview");
 		ProductsPage psp = new ProductsPage(driver);
+		//Open cart to get to Your Cart page
 		psp.openCart();
 
 		YourCartPage ycp = new YourCartPage(driver);
+		//Get the header as appear on Your Cart page
 		String header = ycp.getYourCartPageHeader();
+		//Make sure the header shows "Your Cart"
 		Assert.assertEquals(header, "Your Cart");
 
 
@@ -81,9 +88,12 @@ public class ProblemUserBuyAllProductsTest extends BaseTest {
 		ycp.checkout();
 
 		CheckoutPage cp = new CheckoutPage(driver);
+		//Insert personal details on the checkout page
 		cp.insertInfo(Utils.readProperty("firstname"), Utils.readProperty("lastname"), Utils.readProperty("zipcode"));
 		OverviewPage ov = new OverviewPage(driver);
+		//Get the header from the Overview page
 		header = ov.getOverviewPageHeader();
+		//Ensure the header shows "Checkout: Overview"
 		Assert.assertEquals(header, "Checkout: Overview");
 		System.out.println("*******END CHECKOUT****************");
 	}
@@ -94,10 +104,13 @@ public class ProblemUserBuyAllProductsTest extends BaseTest {
 	{
 		System.out.println("*******START FINISH ORDER****************");
 		OverviewPage ovp = new OverviewPage(driver);
+		//Click on finish button from the Overview page
 		ovp.clickFinishBtn();
 		FinishPage fp = new FinishPage(driver);
+		//Get the Thank you page message
 		String actual = fp.getThankYouMsg();
 		String expected = "THANK YOU FOR YOUR ORDER";
+		//Ensure the Thank you page message shows "THANK YOU FOR YOUR ORDER"
 		Assert.assertEquals(actual,expected);
 		System.out.println("*******END FINISH ORDER****************");
 
@@ -109,9 +122,12 @@ public class ProblemUserBuyAllProductsTest extends BaseTest {
 	{
 		System.out.println("*******START LOGOUT****************");
 		FinishPage fp = new FinishPage(driver);
+		//Click on the 3 small lines of menu (left top hand side of the page)
 		fp.clickMenu();
+		//Click on logout from the menu page
 		fp.logout();
 		LoginPage lp = new LoginPage(driver);
+		//Make sure the logout has been done successfully by verifying that the user is in Login page
 		boolean actual = lp.isItLoginPage();
 
 		Assert.assertTrue(actual);

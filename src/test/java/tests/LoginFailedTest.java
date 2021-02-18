@@ -25,10 +25,12 @@ public class LoginFailedTest extends BaseTest {
 	{
 		System.out.println("Login Negative Test begins");
 		LoginPage lp = new LoginPage(driver);
+		//Insert username and password from the spreadsheet
 		lp.login(user, password);
 		
 		String expected = "Epic sadface: Username and password do not match any user in this service";
 		String actual = lp.getLoginErrMsg();
+		//Make sure the login has failed with the error message - "Epic sadface: Username and password do not match any user in this service"
 		Assert.assertEquals(actual, expected);
 		
 	}
