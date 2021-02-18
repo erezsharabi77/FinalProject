@@ -26,7 +26,7 @@ public class AboutTest extends BaseTest {
 	@Description("Login with existing user")
 	public void tc01_login() throws IOException
 	{
-		System.out.println("Buy All products Test begins");
+		System.out.println("About Test begins");
 		System.out.println("*******START LOGIN****************");
 		LoginPage lp = new LoginPage(driver);
 		lp.login(Utils.readProperty("user"), Utils.readProperty("password"));
