@@ -3,7 +3,6 @@ package tests;
 import java.io.IOException;
 
 import org.testng.Assert;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import io.qameta.allure.Description;
@@ -13,10 +12,8 @@ import pageobjects.LoginPage;
 import pageobjects.OverviewPage;
 import pageobjects.ProductsPage;
 import pageobjects.YourCartPage;
-import utilities.ListenerClass;
 import utils.Utils;
 
-@Listeners({ListenerClass.class})
 public class BuyAllProductsTest extends BaseTest {
 
 
