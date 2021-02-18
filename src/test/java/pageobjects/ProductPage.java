@@ -1,6 +1,7 @@
 package pageobjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -35,7 +36,10 @@ public class ProductPage extends MenuPage {
 	public void back()
 	{
 		wait.until(ExpectedConditions.elementToBeClickable(backBtn));
-		click(backBtn);
+		WebElement element = driver.findElement(By.cssSelector(".inventory_details_back_button"));
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", element);
+//		click(backBtn);
 	}
 	
 	@Step("Get product name")
