@@ -14,6 +14,7 @@ import pageobjects.ProductsPage;
 import pageobjects.YourCartPage;
 import utils.Utils;
 
+//@Listeners({ListenerClass.class})
 public class BuyAllProductsTest extends BaseTest {
 
 
