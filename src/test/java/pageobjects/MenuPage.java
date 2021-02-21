@@ -30,8 +30,8 @@ public class MenuPage extends BasePage{
 	@FindBy(css = ".bm-cross-button button")
 	WebElement closeBtn;
 	
-	@FindBy(css = "#loading")
-	WebElement loading;
+//	@FindBy(css = "#loading")
+//	WebElement loading;
 	
 	@FindBy(css = ".shopping_cart_badge")
 	WebElement cartBadge;
@@ -42,10 +42,10 @@ public class MenuPage extends BasePage{
 		super(driver);
 	}
 
-	public void waitingForLoading() {
-		wait.until(ExpectedConditions.visibilityOf(loading));
-		wait.until(ExpectedConditions.invisibilityOf(loading));
-	}
+//	public void waitingForLoading() {
+//		wait.until(ExpectedConditions.visibilityOf(loading));
+//		wait.until(ExpectedConditions.invisibilityOf(loading));
+//	}
 	
 	@Step("Open cart to see all products")
 	public void openCart() {

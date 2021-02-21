@@ -36,10 +36,8 @@ public class ProductPage extends MenuPage {
 	public void back()
 	{
 		wait.until(ExpectedConditions.elementToBeClickable(backBtn));
-		WebElement element = driver.findElement(By.cssSelector(".inventory_details_back_button"));
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
-		executor.executeScript("arguments[0].click();", element);
-//		click(backBtn);
+		executor.executeScript("arguments[0].click();", backBtn);
 	}
 	
 	@Step("Get product name")

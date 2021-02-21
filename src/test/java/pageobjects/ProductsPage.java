@@ -84,10 +84,10 @@ public class ProductsPage extends MenuPage {
 			str = el.getText().substring(1, el.getText().length());
 			if (lowPrice <= Double.parseDouble(str)) {
 				System.out.println(lowPrice + " is lower or equal to " + el.getText());
+				lowPrice = Double.parseDouble(el.getText().substring(1, el.getText().length()));
 			}
 			else
 				return false;
-			lowPrice = Double.parseDouble(el.getText().substring(1, el.getText().length()));
 		}
 		return true;
 	}
