@@ -36,7 +36,7 @@ public class AboutTest extends BaseTest {
 	}
 
 
-	@Test(description = "tc02_About")
+	@Test(description = "tc02_About",dependsOnMethods = { "tc01_login" })
 	@Description("Click on About and make sure you are in https://saucelabs.com website")
 	public void tc02_about() throws IOException
 	{
@@ -57,7 +57,7 @@ public class AboutTest extends BaseTest {
 
 	
 
-	@Test(description = "tc03_Logout")
+	@Test(description = "tc03_Logout",dependsOnMethods = { "tc01_login", "tc02_about" })
 	@Description("Logout from the application")
 	public void tc03_logout() throws IOException
 	{

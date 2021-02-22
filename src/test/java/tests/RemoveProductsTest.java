@@ -37,7 +37,7 @@ public class RemoveProductsTest extends BaseTest {
 	}
 
 
-	@Test(description = "tc02_Count Products")
+	@Test(description = "tc02_Count Products", dependsOnMethods = { "tc01_login"})
 	@Description("Count Products on the products pages")
 	public void tc02_countProducts() throws IOException
 	{
@@ -51,7 +51,7 @@ public class RemoveProductsTest extends BaseTest {
 		System.out.println("*******END COUNT PRODUCTS****************");
 	}
 
-	@Test(description = "tc03_Add Product")
+	@Test(description = "tc03_Add Product", dependsOnMethods = { "tc01_login"})
 	@Description("Add first product to cart")
 	public void tc03_addProduct1() throws IOException
 	{
@@ -78,7 +78,7 @@ public class RemoveProductsTest extends BaseTest {
 		System.out.println("*******END ADD FIRST PRODUCT****************");
 	}
 
-	@Test(description = "tc04_Add Product")
+	@Test(description = "tc04_Add Product", dependsOnMethods = { "tc01_login"})
 	@Description("Add second product to cart")
 	public void tc04_addProduct2() throws IOException
 	{
@@ -106,7 +106,7 @@ public class RemoveProductsTest extends BaseTest {
 
 	}
 
-	@Test(description = "tc05_Remove all products")
+	@Test(description = "tc05_Remove all products", dependsOnMethods = { "tc01_login", "tc03_addProduct1", "tc04_addProduct2"})
 	@Description("Remove all products from your cart page")
 	public void tc05_removeAllProduct() throws IOException
 	{
@@ -124,7 +124,7 @@ public class RemoveProductsTest extends BaseTest {
 	}
 
 
-	@Test(description = "tc06_Logout")
+	@Test(description = "tc06_Logout", dependsOnMethods = { "tc01_login"})
 	@Description("Logout from the application")
 	public void tc06_logout() throws IOException
 	{
