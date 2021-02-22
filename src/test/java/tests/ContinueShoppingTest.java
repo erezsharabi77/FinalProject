@@ -110,7 +110,7 @@ public class ContinueShoppingTest extends BaseTest {
 
 	}
 
-	@Test(description = "tc05_Continue Shopping",dependsOnMethods = { "tc01_login","tc03_addProduct1", "tc04_addProduct2" })
+	@Test(description = "tc05_Continue Shopping", dependsOnMethods = { "tc01_login" })
 	@Description("Choose to continue shooping instead of moving to checkout")
 	public void tc05_continueShopping() throws IOException
 	{
@@ -127,7 +127,7 @@ public class ContinueShoppingTest extends BaseTest {
 		System.out.println("*******END CONTINUE SHOPPING****************");
 	}
 
-	@Test(description = "tc06_Add product to cart",dependsOnMethods = { "tc01_login", "tc05_continueShopping"})
+	@Test(description = "tc06_Add product to cart", dependsOnMethods = { "tc01_login" })
 	@Description("Add third product to the cart")
 	public void tc06_addProduct3() throws IOException
 	{
@@ -155,7 +155,7 @@ public class ContinueShoppingTest extends BaseTest {
 
 	}
 
-	@Test(description = "tc07_Checkout",dependsOnMethods = { "tc01_login", "tc06_addProduct3"})
+	@Test(description = "tc07_Checkout", dependsOnMethods = { "tc01_login" })
 	@Description("Fill first name, last name, zip code and move to checkout")
 	public void tc07_checkout() throws IOException
 	{
@@ -184,7 +184,7 @@ public class ContinueShoppingTest extends BaseTest {
 		System.out.println("*******END CHECKOUT****************");
 	}
 
-	@Test(description = "tc08_Finish Order",dependsOnMethods = { "tc01_login","tc07_checkout"})
+	@Test(description = "tc08_Finish Order", dependsOnMethods = { "tc01_login" })
 	@Description("Click on finish order to get to the thank you page")
 	public void tc08_finishOrder() throws IOException
 	{

@@ -2,6 +2,7 @@ package tests;
 
 import java.io.IOException;
 
+import org.junit.Rule;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -16,7 +17,7 @@ import pageobjects.YourCartPage;
 import utils.Utils;
 
 public class BuyProductsTest extends BaseTest {
-
+	
 
 	@Test(description = "tc01_Login")
 	@Description("Login with existing user")
@@ -105,7 +106,7 @@ public class BuyProductsTest extends BaseTest {
 
 	}
 
-	@Test(description = "tc05_Checkout", dependsOnMethods = { "tc01_login","tc03_addProduct1", "tc04_addProduct2" })
+	@Test(description = "tc05_Checkout", dependsOnMethods = { "tc01_login" })
 	@Description("Fill first name, last name, zip code and move to checkout")
 	public void tc05_checkout() throws IOException
 	{
@@ -134,7 +135,7 @@ public class BuyProductsTest extends BaseTest {
 		System.out.println("*******END CHECKOUT****************");
 	}
 
-	@Test(description = "tc06_Finish Order", dependsOnMethods = { "tc01_login","tc05_checkout" })
+	@Test(description = "tc06_Finish Order", dependsOnMethods = { "tc01_login" })
 	@Description("Click on finish order to get to the thank you page")
 	public void tc06_finishOrder() throws IOException
 	{
@@ -151,7 +152,7 @@ public class BuyProductsTest extends BaseTest {
 		System.out.println("*******END FINISH ORDER****************");
 	}
 
-	@Test(description = "tc07_Logout", dependsOnMethods = { "tc01_login" })
+	@Test(description = "tc07_Logout", dependsOnMethods = {"tc01_login"})
 	@Description("Logout from the application")
 	public void tc07_logout() throws IOException
 	{

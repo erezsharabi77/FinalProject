@@ -108,7 +108,7 @@ public class CheckoutNegativeTest extends BaseTest {
 
 	}
 
-	@Test(description = "tc05_Checkout",dependsOnMethods = { "tc01_login", "tc03_addProduct1", "tc04_addProduct2" })
+	@Test(description = "tc05_Checkout", dependsOnMethods = { "tc01_login" })
 	@Description("Fill first name, last name, zip code and move to checkout")
 	public void tc05_checkout() throws IOException
 	{

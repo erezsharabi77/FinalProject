@@ -67,7 +67,7 @@ public class ProblemUserBuyAllProductsTest extends BaseTest {
 		System.out.println("*******END ADD ALL PRODUCTS****************");
 	}
 
-	@Test(description = "tc04_Checkout",dependsOnMethods = { "tc01_login", "tc03_addAllProduct"})
+	@Test(description = "tc04_Checkout", dependsOnMethods = { "tc01_login" })
 	@Description("Fill first name, last name, zip code and move to checkout")
 	public void tc04_checkout() throws IOException
 	{
@@ -98,7 +98,7 @@ public class ProblemUserBuyAllProductsTest extends BaseTest {
 		System.out.println("*******END CHECKOUT****************");
 	}
 
-	@Test(description = "tc05_Finish Order",dependsOnMethods = { "tc01_login", "tc04_checkout"})
+	@Test(description = "tc05_Finish Order", dependsOnMethods = { "tc01_login" })
 	@Description("Click on finish order to get to the thank you page")
 	public void tc05_finishOrder() throws IOException
 	{

@@ -49,6 +49,7 @@ public class MenuPage extends BasePage{
 	
 	@Step("Open cart to see all products")
 	public void openCart() {
+		wait.until(ExpectedConditions.elementToBeClickable(cartBtn));
 		click(cartBtn);
 	}
 	

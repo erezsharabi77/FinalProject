@@ -106,7 +106,7 @@ public class RemoveProductsTest extends BaseTest {
 
 	}
 
-	@Test(description = "tc05_Remove all products", dependsOnMethods = { "tc01_login", "tc03_addProduct1", "tc04_addProduct2"})
+	@Test(description = "tc05_Remove all products", dependsOnMethods = { "tc01_login" })
 	@Description("Remove all products from your cart page")
 	public void tc05_removeAllProduct() throws IOException
 	{
