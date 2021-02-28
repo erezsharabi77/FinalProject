@@ -49,7 +49,6 @@ public class BasePage {
 		try {
 			Thread.sleep(mills);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
