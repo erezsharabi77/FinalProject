@@ -15,19 +15,7 @@ public class BaseTest {
 
 	@BeforeClass
 	public void setup(ITestContext testContext) {
-		//for ie: 
-		//		System.setProperty("webdriver.ie.driver", "C:\\Automation\\Drivers\\IEDriverServer.exe"); 
-		//		driver = new InternetExplorerDriver(); 
 
-		//for Firefox 
-		//		System.setProperty("webdriver.gecko.driver", "C:\\Automation\\Drivers\\geckodriver.exe"); 
-		//		driver = new FirefoxDriver();
-		//for Chrome
-//		System.setProperty("webdriver.chrome.driver", "C:\\automation\\drivers\\chromedriver.exe");
-//		driver = new ChromeDriver();
-//		driver.manage().window().maximize();
-//		driver.get(Utils.readProperty("url"));
-//		System.setProperty("webdriver.chrome.driver", "C:\\automation\\drivers\\chromedriver.exe");
 		WebDriverManager.chromedriver().setup();
 		ChromeOptions cOptions = new ChromeOptions();
 		cOptions.addArguments("disable-infobars");
@@ -36,10 +24,7 @@ public class BaseTest {
 		driver.manage().window().maximize();
 		driver.get(Utils.readProperty("url"));
 		System.out.println("BEGIN TEST SET");
-//		driver.get("https://www.saucedemo.com/index.html");
 
-		//		TasksPage tp = new TasksPage(driver);
-		//		tp.waitingForLoading();
 	}
 
 	@AfterClass
